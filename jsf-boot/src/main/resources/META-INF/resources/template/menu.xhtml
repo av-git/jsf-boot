@@ -1,0 +1,54 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pu="http://primefaces.org/ultima"
+    xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+    
+    <h:form id="menuform"> 
+        <div class="layout-menu">
+            <div class="nano">
+                <div class="nano-content menu-scroll-content">
+                        <div class="profile">
+							<div style="height: 35px;"></div>
+                            <a id="profile-options" href="#">
+                                <span class="profile-name">#{usuario.getNomeReduzido()}</span>
+                                <i class="material-icons">&#xE313;</i>
+                            </a>
+                        </div>
+                    
+                        <ul id="profile-menu" class="ultima-menu">
+                            <li role="menuitem">
+                                <h:link outcome="/views/perfil.xhtml" class="ripplelink">
+                                    <i class="material-icons">&#xE7FD;</i>
+                                    <span>Perfil do Usuário</span>
+                                </h:link>
+                            </li>
+                            <li role="menuitem">
+                            	<p:commandLink action="#{loginMB.logout()}" styleClass="ripplelink">
+                                    <i class="material-icons">&#xE8AC;</i>
+                                    <span>Sair</span>
+                            	</p:commandLink>
+                            </li>
+                        </ul>
+                    <ui:param name="item_menu" value="subdirectory_arrow_right" />
+                    <pu:menu widgetVar="me">
+                        <p:menuitem value="Página Inicial" icon="home" url="/views/home.xhtml" />
+                        <p:submenu label="Recadastramento" icon="assignment">
+                            <p:menuitem value="Aposentados" icon="#{item_menu}" url="/views/recadastramento/aposentados.xhtml" />
+                            <p:menuitem value="Pensionistas" icon="#{item_menu}" url="/views/recadastramento/pensionistas.xhtml" />
+                            <p:menuitem value="Servidores" icon="#{item_menu}" url="/views/recadastramento/servidores.xhtml" rendered="false" />
+                            <p:menuitem value="Estagiários" icon="#{item_menu}" url="/views/recadastramento/estagiarios.xhtml" rendered="false" />
+                            <p:menuitem value="Prestadores de Serviço" icon="#{item_menu}" url="/views/recadastramento/prestadores_servico.xhtml" rendered="false" />
+                            <p:menuitem value="Cedidos" icon="#{item_menu}" url="/views/recadastramento/cedidos.xhtml" rendered="false" />
+                        </p:submenu>
+                        <p:menuitem value="Consulta" icon="search" url="/views/consulta/consulta.xhtml" />
+                    </pu:menu>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

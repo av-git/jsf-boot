@@ -1,0 +1,37 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pu="http://primefaces.org/ultima"
+    xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+
+    <div class="topbar clearfix">
+        <div class="topbar-left" style="color: #fff; text-shadow: 2px 2px #0F0f0F;">
+        	<div class="logo"></div>
+ 			<div>
+ 				<span style="font-size: 32px; padding-bottom: 10px;">#{msg['projeto.sigla']}</span>
+ 				<span>Av <h:outputText value="#{parametrosDoSistema.tipoAmbiente}" rendered="#{parametrosDoSistema.tipoAmbiente ne 'PRD'}" style="color: #d00;" /></span>
+ 			</div>
+			<div style="font-size: 18px;">#{msg['projeto.nome']}</div>
+        </div>
+        
+        <div class="topbar-right">
+            <a id="menu-button" href="#">
+                <i></i>
+            </a>
+            <ul class="topbar-items fadeInDown animated">
+                <li>
+                    <a href="#">
+						<!-- <i class="topbar-icon material-icons" title="Sair">&#xE879;</i> -->
+						<i class="topbar-icon material-icons" title="Ajuda">help_outline</i>
+                        <span class="topbar-item-name">Ajuda</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</ui:composition>

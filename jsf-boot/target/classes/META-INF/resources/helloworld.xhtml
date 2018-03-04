@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:o="http://omnifaces.org/ui"
+				xmlns:of="http://omnifaces.org/functions"
+                template="/template/template.xhtml">
 
-<h:head>
-  <title>PrimeFaces Hello World Example</title>
-</h:head>
-
-<h:body>
+    <ui:define name="content">
+       
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Recadastramento de Estagiários</h1>
+                    <p>Estagiários</p>
+                </div>
+            </div>
+        </div>
+    
+    <h:body>
   <h:form id="hello-world">
 
     <p:panel header="PrimeFaces Hello World Example">
@@ -19,18 +30,44 @@
         <h:outputText value="Last Name: " />
         <p:inputText id="last-name" value="#{helloWorld.lastName}" />
 
-        <p:commandButton id="submit" value="Submit" update="greeting"
+        <p:commandButton action="#{helloWorld.showGreeting()}" id="submit" value="Submit" update="greeting"
           oncomplete="PF('greetingDialog').show()" />
       </h:panelGrid>
     </p:panel>
-
+	
+	<div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Recadastramento de Estagiários</h1>
+                    <p>Estagiários</p>
+                </div>
+            </div>
+        </div>
+	
+	<div class="ui-g">
+		<!-- Linha 1 -->
+		<div class="ui-g-12">
+			<p:outputLabel for="iCpf" value="CPF" />
+			<p:inputMask id="iCpf" value="76724220220" mask="999.999.999-99" disabled="false" required="true" />
+			<p:tooltip for="iCpf" value="" />
+		</div>
+		
+		
+	</div>
+	
     <p:dialog header="Greeting" widgetVar="greetingDialog" modal="true"
       resizable="false">
       <h:panelGrid id="greeting" columns="1" cellpadding="4">
-        <h:outputText value="#{helloWorld.showGreeting()}" />
+       
       </h:panelGrid>
     </p:dialog>
 
   </h:form>
 </h:body>
-</html>
+        
+    </ui:define>
+	
+	
+	
+</ui:composition>
+
