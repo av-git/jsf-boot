@@ -1,6 +1,6 @@
 jsf:
   primefaces: 
-    theme: afterdark
+    theme: ultima-indigo
 
 server:
   context-path: /codenotfound
